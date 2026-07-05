@@ -26,7 +26,17 @@ It provides a single interface for:
 
 ## Setup Instructions
 
-Make scripts executable:
+Setup
 
 ```bash
 sudo chmod +x *.sh
+./setup.sh
+```
+
+## Usage Instructions
+
+Run
+```
+./start.sh
+```
+
