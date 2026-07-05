@@ -31,15 +31,21 @@ echo -e "${GREEN}[*] Detected package manager: $PKG${NC}"
 install_apt_packages() {
     echo -e "${GREEN}[*] Installing system packages via apt...${NC}"
     sudo apt-get update -qq
-    sudo apt install -y -qq \
+    sudo apt-get install -y -qq \
         p7zip-full \
         unrar \
+        rar \
         openssl \
         gnupg \
         python3 \
         python3-pip \
         libreoffice \
         sqlite3 \
+        sqlcipher \
+        cryptsetup-bin \
+        dmg2img \
+        libpst-utils \
+        openssh-client \
         2>/dev/null || true
 }
 

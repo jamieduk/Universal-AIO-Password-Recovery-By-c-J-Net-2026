@@ -9,7 +9,7 @@ NC='\033[0m'
 banner() {
     echo -e "${GREEN}"
     echo "╔══════════════════════════════════════════════════════════════╗"
-    echo "║       Universal AIO Password Recovery Tool v1.0              ║"
+    echo "║       Universal AIO Password Recovery Tool v2.0              ║"
     echo "╚══════════════════════════════════════════════════════════════╝"
     echo -e "${NC}"
 }
@@ -18,23 +18,37 @@ show_menu() {
     echo -e "${GREEN}"
     echo "  Select file type to recover:"
     echo "  ────────────────────────────────────────────────────────────"
-    echo "   1)  ZIP Archive          (.zip)"
-    echo "   2)  PDF Document         (.pdf)"
-    echo "   3)  7-Zip Archive        (.7z)"
-    echo "   4)  RAR Archive          (.rar)"
-    echo "   5)  MS Office            (.doc/.docx/.xls/.xlsx/.ppt/.pptx)"
-    echo "   6)  OpenDocument         (.odt/.ods/.odp/.odg)"
-    echo "   7)  OpenSSL Encrypted    (.enc)"
-    echo "   8)  Disk Image/Container (.iso/.img/.dmg/.vhd/.vhdx/.hc)"
-    echo "   9)  GPG Encrypted        (.gpg/.tar.gz.gpg)"
-    echo "  10)  PGP Encrypted        (.pgp)"
-    echo "  11)  PEM/KEY Private Key  (.pem/.key)"
-    echo "  12)  P12/PFX Certificate  (.p12/.pfx)"
-    echo "  13)  KeePass Database     (.kdbx)"
-    echo "  14)  SQLite Database      (.sqlite/.db)"
-    echo "  15)  BAK Backup File      (.bak)"
-    echo "  16)  Office Macro Doc     (.docm/.xlsm/.pptm)"
-    echo "  17)  EPUB eBook           (.epub)"
+    echo "   1)  ZIP Archive              (.zip)"
+    echo "   2)  PDF Document             (.pdf)"
+    echo "   3)  7-Zip Archive            (.7z)"
+    echo "   4)  RAR Archive              (.rar)"
+    echo "   5)  MS Office                (.doc/.docx/.xls/.xlsx/.ppt/.pptx)"
+    echo "   6)  OpenDocument             (.odt/.ods/.odp/.odg)"
+    echo "   7)  OpenSSL Encrypted        (.enc)"
+    echo "   8)  Disk Image/Container     (.iso/.img/.dmg/.vhd/.vhdx/.hc)"
+    echo "   9)  GPG Encrypted            (.gpg/.tar.gz.gpg)"
+    echo "  10)  PGP Encrypted            (.pgp)"
+    echo "  11)  PEM/KEY Private Key      (.pem/.key)"
+    echo "  12)  P12/PFX Certificate      (.p12/.pfx)"
+    echo "  13)  KeePass Database         (.kdbx)"
+    echo "  14)  SQLite Database          (.sqlite/.db)"
+    echo "  15)  BAK Backup File          (.bak)"
+    echo "  16)  Office Macro Doc         (.docm/.xlsm/.pptm)"
+    echo "  17)  EPUB eBook               (.epub)"
+    echo "  ────────────────────────────────────────────────────────────"
+    echo "  18)  VeraCrypt/TrueCrypt      (.hc/.tc/.vc)"
+    echo "  19)  LUKS Encrypted Volume    (header/device)"
+    echo "  20)  BitLocker Volume         (drive/image)"
+    echo "  21)  Apple DMG Image          (.dmg/.sparsebundle)"
+    echo "  22)  Android Backup           (.ab)"
+    echo "  23)  SSH Private Key          (OpenSSH format)"
+    echo "  24)  GnuPG Keyring            (keyring file)"
+    echo "  25)  Browser Profile          (Firefox/Chrome)"
+    echo "  26)  Outlook PST              (.pst/.ost)"
+    echo "  27)  PDF Portfolio            (.pdf portfolio)"
+    echo "  28)  Database Encrypted       (SQLCipher/MySQL/PG/Mongo)"
+    echo "  29)  iOS Backup               (iTunes/Finder)"
+    echo "  30)  Hybrid Archive           (tar+gpg/zip+AES)"
     echo "  ────────────────────────────────────────────────────────────"
     echo "   0)  Exit"
     echo -e "${NC}"
@@ -68,7 +82,7 @@ main() {
                 echo "Usage: $0 [-f <file>] [-w <wordlist>] [-c <choice>]"
                 echo "  -f, --file      Target file to recover"
                 echo "  -w, --wordlist  Path to password wordlist"
-                echo "  -c, --choice    Menu choice number (1-17)"
+                echo "  -c, --choice    Menu choice number (1-30)"
                 echo "  -h, --help      Show this help"
                 exit 0
                 ;;
@@ -80,7 +94,7 @@ main() {
 
     if [ -z "$choice" ]; then
         show_menu
-        read -p "  Enter choice [0-17]: " choice
+        read -p "  Enter choice [0-30]: " choice
     fi
 
     case "$choice" in
@@ -102,6 +116,19 @@ main() {
         15) script="bak_recovery.py" ;;
         16) script="office_macro_recovery.py" ;;
         17) script="epub_recovery.py" ;;
+        18) script="veracrypt_recovery.py" ;;
+        19) script="luks_recovery.py" ;;
+        20) script="bitlocker_recovery.py" ;;
+        21) script="dmg_recovery.py" ;;
+        22) script="android_ab_recovery.py" ;;
+        23) script="sshkey_recovery.py" ;;
+        24) script="gnupg_keyring_recovery.py" ;;
+        25) script="browser_profile_recovery.py" ;;
+        26) script="pst_recovery.py" ;;
+        27) script="pdf_portfolio_recovery.py" ;;
+        28) script="database_recovery.py" ;;
+        29) script="ios_backup_recovery.py" ;;
+        30) script="hybrid_archive_recovery.py" ;;
         *) echo -e "${GREEN}Invalid choice.${NC}"; exit 1 ;;
     esac
 
