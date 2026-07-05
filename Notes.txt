@@ -1,12 +1,23 @@
 Universal-AIO-Password-Recovery By (c) J~Net 2026
 
+https://github.com/jamieduk/Universal-AIO-Password-Recovery-By-c-J-Net-2026
 
+jnetai.com
+
+
+Setup Instruction:
 
 sudo chmod +x *.sh
 
 ./setup.sh
 
+
+Run:
+
 ./start.sh
+
+
+Example:
 
 Select file type to recover:
   ────────────────────────────────────────────────────────────
