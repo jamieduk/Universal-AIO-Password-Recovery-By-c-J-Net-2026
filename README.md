@@ -1,7 +1,8 @@
 # Universal-AIO-Password-Recovery By (c) J~Net 2026
 
 https://github.com/jamieduk/Universal-AIO-Password-Recovery-By-c-J-Net-2026  
-jnetai.com  
+
+jnetai.com
 
 ---
 
