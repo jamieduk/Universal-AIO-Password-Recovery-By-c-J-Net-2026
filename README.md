@@ -22,6 +22,7 @@ It provides a single interface for:
 - Private keys and certificates  
 - Databases and backups  
 - eBooks and other encrypted formats  
+<img width="630" height="479" alt="preview" src="https://github.com/user-attachments/assets/610b1962-8f13-4aac-9234-c6cf1e6cf837" />
 
 ---
 
