@@ -23,6 +23,7 @@ It provides a single interface for:
 - Databases and backups  
 - eBooks and other encrypted formats  
 <img width="630" height="479" alt="preview" src="https://github.com/user-attachments/assets/610b1962-8f13-4aac-9234-c6cf1e6cf837" />
+<img width="625" height="313" alt="preview2" src="https://github.com/user-attachments/assets/d0ced76f-3df9-4525-acff-19c7488f60ba" />
 
 ---
 
